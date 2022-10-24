@@ -1,0 +1,75 @@
+//json in html ? 
+
+/* Dataset*/
+var data = [{
+
+        "Resume": {
+            "StructuredResume": {               
+                "EducationHistory": [{
+                       
+                        "schoolType": "university",
+                        "Major": "Network Technologies",
+                        "Degree": {
+                            "degreeType": "masters",
+                            "DegreeName": "Master of Technology",
+                            "DegreeDate": "2018"
+                        },
+                        "SchoolName": "some1 University"
+                    },
+                    {
+                       
+                        "schoolType": "university",
+                        "Major": "Computer Science",
+                        "Degree": {
+                            "degreeType": "intermediategraduate",
+                            "DegreeName": "Graduate Degree",
+                            "DegreeDate": "2015"
+                        },
+                        "SchoolName": "some 2 college"
+                    },
+                    {
+                       
+                      
+                        "schoolType": "School",
+                        "Degree": {
+                            "degreeType": "some school",
+                            "DegreeDate": "2013"
+                        },
+                        "StartDate": "notKnown",
+                        "SchoolName": "some 3 school"
+                    }
+                ]
+            },
+           
+
+        }
+    }
+
+];
+
+
+var html = '';
+for (var key in data) {
+    var i, j;
+
+    var edu = data[key].Resume.StructuredResume.EducationHistory.length;
+    
+    html += '<div class="col-sm-4">';
+    html += '<span>' + 'EducationHistory : ' + '</span>';
+    html += '<br/>'
+
+    for (var j = 0; j < edu; j++) {
+        var EducationHistoryData = data[key].Resume.StructuredResume.EducationHistory[j].SchoolName;
+           html += '<span >' + EducationHistoryData + '</span>' +
+        '<br/>' +
+        '<br/>';
+    }
+   
+    html += '</div>';
+};
+console.log()
+$('#table').html(html);
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="row" id="table" style="padding-top:30px"></div>
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Setting the pages character encoding -->
+	<meta charset="UTF-8">
+
+	<!-- The meta viewport will scale my content to any device width -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	 <!-- Link to my stylesheet -->
+	 <link rel="stylesheet" href="styles.css">
+	 <script>
+
+		var data = [{
+		
+		"Resume": {
+			"StructuredResume": {               
+				"EducationHistory": [{
+					   
+						"schoolType": "university",
+						"Major": "Network Technologies",
+						"Degree": {
+							"degreeType": "masters",
+							"DegreeName": "Master of Technology",
+							"DegreeDate": "2018"
+						},
+						"SchoolName": "some1 University"
+					},
+					{
+					   
+						"schoolType": "university",
+						"Major": "Computer Science",
+						"Degree": {
+							"degreeType": "intermediategraduate",
+							"DegreeName": "Graduate Degree",
+							"DegreeDate": "2015"
+						},
+						"SchoolName": "some 2 college"
+					},
+					{
+					   
+					  
+						"schoolType": "School",
+						"Degree": {
+							"degreeType": "some school",
+							"DegreeDate": "2013"
+						},
+						"StartDate": "notKnown",
+						"SchoolName": "some 3 school"
+					}
+				]
+			},
+		   
+		
+		}
+		}
+		
+		];
+		
+		
+		var html = '';
+		for (var key in data) {
+		var i, j;
+		
+		var edu = data[key].Resume.StructuredResume.EducationHistory.length;
+		
+		html += '<div class="col-sm-4">';
+		html += '<span>' + 'EducationHistory : ' + '</span>';
+		html += '<br/>'
+		
+		for (var j = 0; j < edu; j++) {
+		var EducationHistoryData = data[key].Resume.StructuredResume.EducationHistory[j].SchoolName;
+		   html += '<span >' + EducationHistoryData + '</span>' +
+		'<br/>' +
+		'<br/>';
+		}
+		
+		html += '</div>';
+		};
+		console.log()
+		$('#tabless').html(html);
+		
+			</script>
+	<title>Start up</title>
+</head>
+<body >
+
+	<table>
+		<thead>
+			<tr>
+				<th>Image</th>
+				<th>Product name</th>
+				<th>Price</th>
+				<th>inventory</th>
+				<th>Product  code</th>
+			</tr>
+		</thead>
+		<tbody id="data-output">
+			<!-- Prodcuts from gavascript file in here. -->
+		</tbody>
+	</table>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<div class="row" id="tabless" style="padding-top:30px"></div>
+</body>
+</html>
